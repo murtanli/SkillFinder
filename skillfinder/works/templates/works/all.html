@@ -1,0 +1,7 @@
+{% extends 'works/base.html' %}
+    {% block content %}
+        {% for n in post %}
+            <a>{{ n }}</a>
+            <br>
+        {% endfor %}
+    {% endblock %}
