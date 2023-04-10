@@ -1,14 +1,26 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-	<link type="text/css" href="{% static 'works/css/cs1.css' %}" rel="stylesheet" />
+	<meta charset="UTF-8">
+	<title>Поиск услуг</title>
+	<link type="text/css" href="{% static 'works/css/mainhtml.css' %}" rel="stylesheet" />
 </head>
 <body>
-<h1>Сайт для работ</h1>
-{% block content %}
-{% endblock content %}
+	<header>
+		<div class="header">
+            <img src="icon/RPC-JP_Logo.png" alt="Векторный логотип" class="icon" border = "0">
+            <div class="header-right">
+              <a class="active" href="#home">Я заказчик</a>
+              <a href="#contact">Я исполнитель</a>
+            </div>
+          </div>
+	</header>
+	{% block content %}
+	{% endblock %}
+	<footer>
+		<p>&copy; 2023, Все права защищены.</p>
+	</footer>
 </body>
+<script src="script.js"></script>
 </html>
