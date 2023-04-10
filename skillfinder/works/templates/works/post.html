@@ -10,15 +10,16 @@
 	<header>
 		<div class="header">
             <img src="icon/RPC-JP_Logo.png" alt="Векторный логотип" class="icon" border = "0">
-            <div class="header-right">
-				<!--Сделать обработку нажатий на кнопки и выбор поиска-->
-              <a class="active" href="{{ n.get_absolute_url }}">Я заказчик</a>
-              <a href="#contact">Я исполнитель</a>
-            </div>
           </div>
 	</header>
-	{% block content %}
-	{% endblock %}
+	<ul>
+        {% for n in post %}
+        <li>
+            <h2>{{ n.first_name }}</h2>
+            <p>{{ n.last_name }}</p>
+        </li>
+        {% endfor %}
+    </ul>
 	<footer>
 		<p>&copy; 2023, Все права защищены.</p>
 	</footer>
