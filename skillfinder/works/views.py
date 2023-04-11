@@ -5,7 +5,7 @@ from .models import *
 
 
 def main(request):
-    return HttpResponse("Главная страница")
+    return render(request, 'work/home.html')
 
 def work(request):
     post = profile.objects.all()
