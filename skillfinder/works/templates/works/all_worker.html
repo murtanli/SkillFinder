@@ -1,0 +1,18 @@
+{% extends 'works/base.html' %}
+{% block content %}
+<main>
+    <form action="#" method="get">
+        <label for="service-search">Найти услугу:</label>
+        <input type="text" id="service-search" name="service-search" placeholder="Введите название услуги">
+        <button type="submit">Найти</button>
+    </form>
+    <ul>
+        {% for n in post %}
+        <li>
+            <h2><a href="{{ n.get_absolute_url }}">{{ n.first_name }}</a></h2>
+            <p>{{ n.last_name }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock %}
