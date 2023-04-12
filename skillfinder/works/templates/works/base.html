@@ -3,18 +3,28 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Поиск услуг</title>
 	<link type="text/css" href="{% static 'works/css/mainhtml.css' %}" rel="stylesheet" />
 </head>
 <body>
 	<header>
 		<div class="header">
             <img src="icon/RPC-JP_Logo.png" alt="Векторный логотип" class="icon" border = "0">
-            <div class="header-right">
-				<!--Сделать обработку нажатий на кнопки и выбор поиска-->
-              <a class="active" href="{{ n.get_absolute_url }}">Я заказчик</a>
-              <a href="#contact">Я исполнитель</a>
-            </div>
+			{% if selected == 0 %}
+				<div class="header-right">
+            	  <a class="active" href="{% url 'work' %}">{{ work }}</a>
+            	  <a href="{% url 'customer' %}">{{ customer }}</a>
+            	</div>
+			{% elif selected == 1 %}
+				<div class="header-right">
+            	  <a  href="{% url 'work' %}">{{ work }}</a>
+            	  <a class="active" href="{% url 'customer' %}">{{ customer }}</a>
+            	</div>
+			{% else %}
+				<div class="header-right">
+					<a  href="{% url 'work' %}">{{ work }}</a>
+					<a href="{% url 'customer' %}">{{ customer }}</a>
+            	</div>
+			{% endif %}
           </div>
 	</header>
 	{% block content %}

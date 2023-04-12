@@ -1,5 +1,6 @@
 {% extends 'works/base.html' %}
 {% block content %}
+<title>{{ title }}</title>
 <main>
     <form action="#" method="get">
         <label for="service-search">Найти услугу:</label>
@@ -7,11 +8,15 @@
         <button type="submit">Найти</button>
     </form>
     <ul>
-        {% for n in post %}
-        <li>
-            <h2><a href="{{ n.get_absolute_url }}">{{ n.first_name }}</a></h2>
-            <p>{{ n.last_name }}</p>
-        </li>
+        {% for n in posts_wor %}
+            {% for k in post_all %}
+                {% if k.pk == n.profile_wor_id %}
+                        <li>
+                            <h2><a href="{{ k.get_absolute_url }}">{{ k.first_name }}</a></h2>
+                            <p>{{ k.last_name }}</p>
+                        </li>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
     </ul>
 </main>
